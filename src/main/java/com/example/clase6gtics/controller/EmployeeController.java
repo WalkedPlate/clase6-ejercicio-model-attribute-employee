@@ -47,9 +47,9 @@ public class EmployeeController {
     }
 
     @PostMapping("/save")
-    public String guardarEmpleado(@ModelAttribute("employee") Employee employee,
-                                  @RequestParam("birthdateStr") String birthdateStr,
-                                  @RequestParam("hiredateStr") String hiredateStr) {
+    public String guardarEmpleado(@ModelAttribute("employee") Employee employee
+                                  //@RequestParam("birthdateStr") String birthdateStr,
+                                  /*@RequestParam("hiredateStr") String hiredateStr*/) {
 
         /*
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
@@ -61,8 +61,8 @@ public class EmployeeController {
             e.printStackTrace();
         }
         */
-        employee.setHiredate(hiredateStr);
-        employee.setBirthdate(birthdateStr);
+        //employee.setHiredate(hiredateStr);
+        //employee.setBirthdate(birthdateStr);
 
         employeeRepository.save(employee);
         return "redirect:/employee";
