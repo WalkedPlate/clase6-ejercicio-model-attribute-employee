@@ -51,13 +51,18 @@ public class EmployeeController {
                                   @RequestParam("birthdateStr") String birthdateStr,
                                   @RequestParam("hiredateStr") String hiredateStr) {
 
+        /*
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        //SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         try {
             employee.setBirthdate(formatter.parse(birthdateStr));
             employee.setHiredate(formatter.parse(hiredateStr));
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        */
+        employee.setHiredate(hiredateStr);
+        employee.setBirthdate(birthdateStr);
 
         employeeRepository.save(employee);
         return "redirect:/employee";
